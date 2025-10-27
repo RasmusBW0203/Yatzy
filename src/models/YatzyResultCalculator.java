@@ -1,70 +1,124 @@
 package models;
 
+import java.util.Arrays;
+
 /**
  * Used to calculate the score of throws with 5 dice
  */
 public class YatzyResultCalculator {
+    private final int[] dice = new int[5];
 
-    /**
-     *
-     * @param dice
-     */
     public YatzyResultCalculator(Die[] dice) {
-        //TODO: implement YatzyResultCalculator constructor.
+        for (int i = 0; i < dice.length; i++) {
+            this.dice[i] = dice[i].getEyes();
+        }
+        Arrays.sort(this.dice);
     }
 
-    /**
-     * Calculates the score for Yatzy uppersection
-     * @param eyes eye value to calculate score for. eyes should be between 1 and 6
-     * @return the score for specified eye value
-     */
     public int upperSectionScore(int eyes) {
-        //TODO: Implement upperSectionScore method.
-        return 0;
+        int score = 0;
+        for (int die : dice) {
+            if (die == eyes) {
+                score += eyes;
+            }
+        }
+        return score;
     }
 
     public int onePairScore() {
-        //TODO: implement onePairScore method.
+        for (int i = dice.length - 1; i > 0; i--) {
+            if (dice[i] == dice[i - 1]) {
+                return dice[i] * 2;
+            }
+        }
         return 0;
     }
 
     public int twoPairScore() {
-        //TODO: implement twoPairScore method.
+        int twoPairScore = 0;
+
+        for (int i = dice.length - 1; i > 0; i--) {
+            if (dice[i] == dice[i - 1]) {
+                if (twoPairScore == 0) {
+                    twoPairScore = dice[i] * 2;
+                    i--;
+                } else {
+                    return twoPairScore + (dice[i] * 2);
+                }
+            }
+        }
         return 0;
     }
 
     public int threeOfAKindScore() {
-        //TODO: implement threeOfAKindScore method.
+        for (int i = dice.length - 1; i > 0; i--) {
+            if (dice[i] == dice[i - 1] && dice[i] == dice[i - 2]) {
+                return dice[i] * 3;
+            }
+        }
         return 0;
     }
 
     public int fourOfAKindScore() {
-        //TODO: implement fourOfAKindScore method.
+        for (int i = dice.length - 1; i > 0; i--) {
+            if (dice[i] == dice[i - 1] && dice[i] == dice[i - 2] && dice[i] == dice[i - 3]) {
+                return dice[i] * 4;
+            }
+        }
         return 0;
     }
 
     public int smallStraightScore() {
-        //TODO: implement smallStraightScore method.
+        int[] smallStraight = {1, 2, 3, 4, 5};
+        if (Arrays.equals(dice, smallStraight)) {
+            return 15;
+        }
         return 0;
     }
 
     public int largeStraightScore() {
-        //TODO: implement largeStraightScore method.
+        int[] largeStraight = {2, 3, 4, 5, 6};
+        if (Arrays.equals(dice, largeStraight)) {
+            return 20;
+        }
         return 0;
     }
 
     public int fullHouseScore() {
-        //TODO: implement fullHouseScore method.
+        int threeOfAKindValue = 0;
+        int pairValue = 0;
+        for (int i = dice.length - 1; i > 1; i--) {
+            if (dice[i] == dice[i - 1] && dice[i] == dice[i - 2]) {
+                threeOfAKindValue = dice[i] * 3;
+            }
+        }
+        for (int i = dice.length - 1; i > 0; i--) {
+            if (dice[i] == dice[i - 1]) {
+                if (threeOfAKindValue / 3 != dice[i]) {
+                    pairValue = dice[i] * 2;
+                }
+            }
+            if (threeOfAKindValue > 0 && pairValue > 0) {
+                return threeOfAKindValue + pairValue;
+            }
+        }
         return 0;
     }
 
     public int chanceScore() {
-        //TODO: implement chanceScore method.
-        return 0;
+        int sum = 0;
+        for (int die : dice) {
+            sum += die;
+        }
+        return sum;
     }
 
     public int yatzyScore() {
-        //TODO: implement yatzyScore method.
-        return 0;
+        for (int i = 0; i < dice.length - 1; i++) {
+            if (dice[i] != dice[i + 1]) {
+                return 0;
+            }
+        }
+        return 50;
     }
 }
