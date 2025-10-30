@@ -1,6 +1,8 @@
 package models;
 
 public class RaffleCup {
+
+
     private final Die[] dice = new Die[5];
 
     public RaffleCup() {
@@ -17,6 +19,6 @@ public class RaffleCup {
 
     public Die[] getDice() {
         return dice;
-    }
 
+    }
 }

@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7bed1782-295b-4529-b5e0-ce21edd298f8" name="Changes" comment="Added JavaFx libs">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="7bed1782-295b-4529-b5e0-ce21edd298f8" name="Changes" comment="Yatzy">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Yatzy.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Yatzy.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gui/YatzyGui.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/YatzyGui.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/models/Die.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/Die.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/models/RaffleCup.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/RaffleCup.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/models/YatzyResultCalculator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/YatzyResultCalculator.java" afterDir="false" />
@@ -39,6 +38,9 @@
     "accountId": "e9f23859-4704-4502-9286-0cf21bd36537"
   }
 }]]></component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 7
 }</component>
@@ -49,6 +51,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Application.YatzyApp.executor": "Run",
     "Downloaded.Files.Path.Enabled": "false",
     "JUnit.YatzyResultsCalculatorTests.executor": "Run",
     "Repository.Attach.Annotations": "false",
@@ -66,7 +69,14 @@
     "settings.editor.selected.configurable": "preferences.pluginManager"
   }
 }]]></component>
-  <component name="RunManager" selected="JUnit.YatzyResultsCalculatorTests">
+  <component name="RunManager" selected="Application.YatzyApp">
+    <configuration name="YatzyApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="gui.YatzyApp" />
+      <module name="Yatzy" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="YatzyResultsCalculatorTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Yatzy" />
       <extension name="coverage">
@@ -100,6 +110,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.YatzyApp" />
         <item itemvalue="JUnit.YatzyResultsCalculatorTests" />
         <item itemvalue="JUnit.YatzyResultsCalculatorTests.upperSectionScoreTests" />
       </list>
@@ -129,6 +140,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Added JavaFx libs" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added JavaFx libs" />
+    <MESSAGE value="Yatzy" />
+    <option name="LAST_COMMIT_MESSAGE" value="Yatzy" />
   </component>
 </project>
